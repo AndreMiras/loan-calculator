@@ -2,13 +2,11 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      Loan Calculator
-    </div>
-  );
-}
+const App = (): JSX.Element => (
+  <div className="App">
+    <Header />
+    Loan Calculator
+  </div>
+);
 
 export default App;

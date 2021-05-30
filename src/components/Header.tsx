@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = () => (
+const Header = (): JSX.Element => (
   <header className="mb-4">
     <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <a className="navbar-brand" href="/">Loan Calculator</a>
