@@ -2,13 +2,16 @@ import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Row } from 'react-bootstrap';
 import Header from './components/Header';
+import LoanChart from './components/LoanChart';
 import LoanForm from './components/LoanForm';
 import LoanResult from './components/LoanResult';
+import { computeLoanParameters } from './utils/index';
 
 const App = (): JSX.Element => {
   const [amount, setAmount] = useState(200000);
   const [term, setTerm] = useState(20);
   const [interest, setInterest] = useState(1.9);
+  const { monthlyPayment, totalInterest, total } = computeLoanParameters(amount, term, interest);
   return (
     <div className="App">
       <Header />
@@ -18,7 +21,10 @@ const App = (): JSX.Element => {
             <LoanForm onAmount={setAmount} onTerm={setTerm} onInterest={setInterest} />
           </Col>
           <Col>
-            <LoanResult amount={amount} term={term} interest={interest} />
+            <LoanResult monthlyPayment={monthlyPayment} amount={amount} totalInterest={totalInterest} total={total} />
+          </Col>
+          <Col>
+            <LoanChart amount={amount} totalInterest={totalInterest} />
           </Col>
         </Row>
       </div>
