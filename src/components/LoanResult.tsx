@@ -12,14 +12,17 @@ const LoanResult: FunctionComponent<LoanResultProps> = ({ monthlyPayment, amount
   <Card className="mt-4">
     <Card.Header>Loan Result</Card.Header>
     <Card.Body>
-      <Card.Title>Monthly Payment: { monthlyPayment.toFixed(2) }</Card.Title>
+      <Card.Title className="text-center">Monthly Payment</Card.Title>
+      <h3 className="text-center">{ monthlyPayment.toFixed(2) }</h3>
+      <hr/>
       <Row>
-        <Col md={6}>Principal paid:</Col>
-        <Col md={6}>{ amount.toFixed(2) }</Col>
-        <Col md={6}>Interest paid:</Col>
-        <Col md={6}>{ totalInterest.toFixed(2) }</Col>
-        <Col md={6}>Total paid:</Col>
-        <Col md={6}>{ total.toFixed(2) }</Col>
+        <Col xs={6}>Principal paid:</Col>
+        <Col xs={6} className="text-right">{ amount.toFixed(2) }</Col>
+        <Col xs={6}>Interest paid:</Col>
+        <Col xs={6} className="text-right">{ totalInterest.toFixed(2) }</Col>
+        <Col xs={12}><hr/></Col>
+        <Col xs={6}>Total paid:</Col>
+        <Col xs={6} className="text-right">{ total.toFixed(2) }</Col>
       </Row>
     </Card.Body>
   </Card>

@@ -13,7 +13,7 @@ const AmountField: FunctionComponent<AmountFieldProps> = ({ onChange }) => (
   <Form.Group controlId="loan-amount">
     <Form.Label>Loan Amount</Form.Label>
     <Form.Control type="number" placeholder="200000" onChange={(e) => onChange(eventTargetValueNumber(e))} />
-    <Form.Text className="text-muted">
+    <Form.Text className="text-muted d-none d-md-block">
       The amount to borrow.
     </Form.Text>
   </Form.Group>
@@ -27,7 +27,7 @@ const TermField: FunctionComponent<TermFieldProps> = ({ onChange }) => (
   <Form.Group controlId="loan-term">
     <Form.Label>Loan Term</Form.Label>
     <Form.Control type="number" placeholder="20" onChange={(e) => onChange(eventTargetValueNumber(e))} />
-    <Form.Text className="text-muted">
+    <Form.Text className="text-muted d-none d-md-block">
       The loan repayment period in years.
     </Form.Text>
   </Form.Group>
@@ -41,7 +41,7 @@ const InterestRateField: FunctionComponent<InterestRateFieldProps> = ({ onChange
   <Form.Group controlId="loan-interest-rate">
     <Form.Label>Interest Rate</Form.Label>
     <Form.Control type="number" placeholder="2.0" onChange={(e) => onChange(eventTargetValueNumber(e))} />
-    <Form.Text className="text-muted">
+    <Form.Text className="text-muted d-none d-md-block">
       The percentage interest rate.
     </Form.Text>
   </Form.Group>
