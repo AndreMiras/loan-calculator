@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { Pie } from 'react-chartjs-2';
 import { Card } from 'react-bootstrap';
 
-const getChartParameters = (data) => ({
+const getChartParameters = (data: [number, number]) => ({
   labels: ['Principal', 'Intest'],
   datasets: [
     {
@@ -19,13 +19,13 @@ const getChartParameters = (data) => ({
 type LoanChartProps = {
   amount: number,
   totalInterest: number,
-}
+};
 
 const LoanChart: FunctionComponent<LoanChartProps> = ({ amount, totalInterest }) => (
   <Card className="mt-4">
     <Card.Header>Loan Distribution</Card.Header>
     <Card.Body>
-      <Pie data={getChartParameters([amount, totalInterest])} />
+      <Pie data={getChartParameters([amount, totalInterest])} type="pie" />
     </Card.Body>
   </Card>
 );

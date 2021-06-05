@@ -1,14 +1,13 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, ChangeEvent } from 'react';
 import { Button, Card, Form } from 'react-bootstrap';
 
 type onNumberChangeCallback = (value: number) => void;
 
-
 type AmountFieldProps = {
   onChange: onNumberChangeCallback,
-}
+};
 
-const eventTargetValueNumber = (e) => Number(e.target.value);
+const eventTargetValueNumber = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => Number(e.target.value);
 
 const AmountField: FunctionComponent<AmountFieldProps> = ({ onChange }) => (
   <Form.Group controlId="loan-amount">
@@ -22,7 +21,7 @@ const AmountField: FunctionComponent<AmountFieldProps> = ({ onChange }) => (
 
 type TermFieldProps = {
   onChange: onNumberChangeCallback,
-}
+};
 
 const TermField: FunctionComponent<TermFieldProps> = ({ onChange }) => (
   <Form.Group controlId="loan-term">
@@ -36,7 +35,7 @@ const TermField: FunctionComponent<TermFieldProps> = ({ onChange }) => (
 
 type InterestRateFieldProps = {
   onChange: onNumberChangeCallback,
-}
+};
 
 const InterestRateField: FunctionComponent<InterestRateFieldProps> = ({ onChange }) => (
   <Form.Group controlId="loan-interest-rate">
@@ -53,7 +52,7 @@ type LoanFormProps = {
   onAmount: onNumberChangeCallback,
   onTerm: onNumberChangeCallback,
   onInterest: onNumberChangeCallback,
-}
+};
 const LoanForm: FunctionComponent<LoanFormProps> = ({ onAmount, onTerm, onInterest }) => (
   <Card className="mt-4">
     <Card.Header>Loan Form</Card.Header>
