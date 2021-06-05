@@ -1,45 +1,71 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { Button, Form } from 'react-bootstrap';
 
-const AmountField = (): JSX.Element => (
+// interface myCallbackType { (myArgument: string): void }
+type onNumberChangeCallback = (value: number) => void;
+
+
+type AmountFieldProps = {
+  onChange: onNumberChangeCallback,
+}
+
+const eventTargetValueNumber = (e) => Number(e.target.value);
+
+const AmountField: FunctionComponent<AmountFieldProps> = ({ onChange }) => (
   <Form.Group controlId="loan-amount">
     <Form.Label>Loan Amount</Form.Label>
-    <Form.Control type="number" placeholder="200000" />
+    <Form.Control type="number" placeholder="200000" onChange={(e) => onChange(eventTargetValueNumber(e))} />
     <Form.Text className="text-muted">
       The amount to borrow.
     </Form.Text>
   </Form.Group>
 );
 
-const TermField = (): JSX.Element => (
+type TermFieldProps = {
+  onChange: onNumberChangeCallback,
+}
+
+const TermField: FunctionComponent<TermFieldProps> = ({ onChange }) => (
   <Form.Group controlId="loan-term">
     <Form.Label>Loan Term</Form.Label>
-    <Form.Control type="number" placeholder="20" />
+    <Form.Control type="number" placeholder="20" onChange={(e) => onChange(eventTargetValueNumber(e))} />
     <Form.Text className="text-muted">
       The loan repayment period in years.
     </Form.Text>
   </Form.Group>
 );
 
-const InterestRateField = (): JSX.Element => (
+type InterestRateFieldProps = {
+  onChange: onNumberChangeCallback,
+}
+
+const InterestRateField: FunctionComponent<InterestRateFieldProps> = ({ onChange }) => (
   <Form.Group controlId="loan-interest-rate">
     <Form.Label>Interest Rate</Form.Label>
-    <Form.Control type="number" placeholder="2.0" />
+    <Form.Control type="number" placeholder="2.0" onChange={(e) => onChange(eventTargetValueNumber(e))} />
     <Form.Text className="text-muted">
       The percentage interest rate.
     </Form.Text>
   </Form.Group>
 );
 
-const LoanForm = (): JSX.Element => (
-  <Form>
-    <AmountField />
-    <TermField />
-    <InterestRateField />
-    <Button variant="primary" type="button">
-      Calculate
-    </Button>
-  </Form>
-);
+
+type LoanFormProps = {
+  onAmount: onNumberChangeCallback,
+  onTerm: onNumberChangeCallback,
+  onInterest: onNumberChangeCallback,
+}
+const LoanForm: FunctionComponent<LoanFormProps> = ({ onAmount, onTerm, onInterest }) => {
+  return (
+    <Form>
+      <AmountField onChange={onAmount} />
+      <TermField onChange={onTerm} />
+      <InterestRateField onChange={onInterest} />
+      <Button variant="primary" type="button">
+        Calculate
+      </Button>
+    </Form>
+  );
+};
 
 export default LoanForm;
