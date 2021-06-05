@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Card, Form } from 'react-bootstrap';
 
-// interface myCallbackType { (myArgument: string): void }
 type onNumberChangeCallback = (value: number) => void;
 
 
@@ -55,17 +54,20 @@ type LoanFormProps = {
   onTerm: onNumberChangeCallback,
   onInterest: onNumberChangeCallback,
 }
-const LoanForm: FunctionComponent<LoanFormProps> = ({ onAmount, onTerm, onInterest }) => {
-  return (
-    <Form>
-      <AmountField onChange={onAmount} />
-      <TermField onChange={onTerm} />
-      <InterestRateField onChange={onInterest} />
-      <Button variant="primary" type="button">
-        Calculate
-      </Button>
-    </Form>
-  );
-};
+const LoanForm: FunctionComponent<LoanFormProps> = ({ onAmount, onTerm, onInterest }) => (
+  <Card className="mt-4">
+    <Card.Header>Loan Form</Card.Header>
+    <Card.Body>
+      <Form>
+        <AmountField onChange={onAmount} />
+        <TermField onChange={onTerm} />
+        <InterestRateField onChange={onInterest} />
+        <Button variant="primary" type="button">
+          Calculate
+        </Button>
+      </Form>
+    </Card.Body>
+  </Card>
+);
 
 export default LoanForm;
