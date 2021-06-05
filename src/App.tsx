@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Col, Row } from 'react-bootstrap';
 import Header from './components/Header';
 import LoanForm from './components/LoanForm';
 import LoanResult from './components/LoanResult';
@@ -12,8 +13,14 @@ const App = (): JSX.Element => {
     <div className="App">
       <Header />
       <div className="container">
-        <LoanForm onAmount={setAmount} onTerm={setTerm} onInterest={setInterest} />
-        <LoanResult amount={amount} term={term} interest={interest} />
+        <Row>
+          <Col>
+            <LoanForm onAmount={setAmount} onTerm={setTerm} onInterest={setInterest} />
+          </Col>
+          <Col>
+            <LoanResult amount={amount} term={term} interest={interest} />
+          </Col>
+        </Row>
       </div>
     </div>
   );
