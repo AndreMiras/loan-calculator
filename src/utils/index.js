@@ -8,4 +8,15 @@ const computeMonthlyPayment = (amount: number, term: number, interest: number) :
   return (amount * interest / 12) / (1 - (1 / (Math.pow((1 + (interest / 12)), term * 12))));
 };
 
-export { computeMonthlyPayment };
+const computeLoanParameters = (amount: number, term: number, interest: number) : { monthlyPayment: number; totalInterest: number; total: number } => {
+    const monthlyPayment = computeMonthlyPayment(amount, term, interest);
+    const total = monthlyPayment * term * 12;
+    const totalInterest = total - amount;
+    return {
+      monthlyPayment: monthlyPayment,
+      totalInterest: totalInterest,
+      total: total,
+    };
+};
+
+export { computeMonthlyPayment, computeLoanParameters };
