@@ -1,5 +1,5 @@
 import React, { FunctionComponent, ChangeEvent } from 'react';
-import { Button, Card, Form } from 'react-bootstrap';
+import { Card, Form } from 'react-bootstrap';
 
 type onNumberChangeCallback = (value: number) => void;
 
@@ -61,9 +61,6 @@ const LoanForm: FunctionComponent<LoanFormProps> = ({ onAmount, onTerm, onIntere
         <AmountField onChange={onAmount} />
         <TermField onChange={onTerm} />
         <InterestRateField onChange={onInterest} />
-        <Button variant="primary" type="button">
-          Calculate
-        </Button>
       </Form>
     </Card.Body>
   </Card>
