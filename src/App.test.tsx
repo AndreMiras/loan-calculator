@@ -7,7 +7,7 @@ import App from './App';
  * https://github.com/reactchartjs/react-chartjs-2/issues/155
  */
 jest.mock('react-chartjs-2', () => ({
-  Pie: () => null,
+  Doughnut: () => null,
 }))
 
 test('renders home link', () => {

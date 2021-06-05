@@ -24,7 +24,7 @@ const App = (): JSX.Element => {
             <LoanResult monthlyPayment={monthlyPayment} amount={amount} totalInterest={totalInterest} total={total} />
           </Col>
           <Col>
-            <LoanChart amount={amount} totalInterest={totalInterest} />
+            <LoanChart amount={amount} totalInterest={totalInterest} total={total} />
           </Col>
         </Row>
       </div>
