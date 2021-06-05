@@ -17,7 +17,7 @@ const App = (): JSX.Element => {
       <Header />
       <div className="container">
         <Row>
-          <Col sm={12} md={6}>
+          <Col sm={12} md={4}>
             <LoanForm onAmount={setAmount} onTerm={setTerm} onInterest={setInterest} />
           </Col>
           <Col>
