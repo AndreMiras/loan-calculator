@@ -8,9 +8,9 @@ import LoanResult from './components/LoanResult';
 import { computeLoanParameters } from './utils/index';
 
 const App = (): JSX.Element => {
-  const [amount, setAmount] = useState(200000);
-  const [term, setTerm] = useState(20);
-  const [interest, setInterest] = useState(1.9);
+  const [amount, setAmount] = useState(0);
+  const [term, setTerm] = useState(0);
+  const [interest, setInterest] = useState(0);
   const { monthlyPayment, totalInterest, total } = computeLoanParameters(amount, term, interest);
   return (
     <div className="App">
