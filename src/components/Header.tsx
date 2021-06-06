@@ -9,7 +9,7 @@ const Header = (): JSX.Element => (
       <Navbar.Collapse>
         <Nav className="mr-auto">
           <Nav.Link href={process.env.PUBLIC_URL}>Home</Nav.Link>
-          <Nav.Link href="https://gitlab.com/andre.miras/loan-calculator">
+          <Nav.Link href="https://github.com/AndreMiras/loan-calculator">
             About
           </Nav.Link>
         </Nav>
