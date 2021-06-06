@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container, Nav, Navbar } from "react-bootstrap";
 
 const Header = (): JSX.Element => (
-  <Navbar bg="dark" variant="dark" expand="sm" className="mb-4">
+  <Navbar bg="dark" variant="dark" expand="sm">
     <Container>
       <Navbar.Brand href={process.env.PUBLIC_URL}>
         <FontAwesomeIcon icon={["fas", "calculator"]} /> Loan Calculator

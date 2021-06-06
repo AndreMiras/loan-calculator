@@ -38,8 +38,8 @@ const LoanChart: FunctionComponent<LoanChartProps> = ({
   totalInterest,
   total,
 }) => (
-  <Card className="mt-4">
-    <Card.Header>Loan Distribution</Card.Header>
+  <Card>
+    <Card.Header className="d-none d-md-block">Loan Distribution</Card.Header>
     <Card.Body>
       <Doughnut
         data={getChartParameters(amount, totalInterest, total)}

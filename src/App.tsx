@@ -26,14 +26,14 @@ const App = (): JSX.Element => {
       <Header />
       <Container>
         <Row>
-          <Col sm={12} md={4}>
+          <Col sm={12} md={6} lg={4} className="mt-3">
             <LoanForm
               onAmount={setAmount}
               onTerm={setTerm}
               onInterest={setInterest}
             />
           </Col>
-          <Col>
+          <Col sm={12} md={6} lg={8} className="mt-3">
             <LoanResult
               monthlyPayment={monthlyPayment}
               amount={amount}
@@ -41,7 +41,7 @@ const App = (): JSX.Element => {
               total={total}
             />
           </Col>
-          <Col>
+          <Col className="mt-3">
             <LoanChart
               amount={amount}
               totalInterest={totalInterest}

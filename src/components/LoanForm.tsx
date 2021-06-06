@@ -32,7 +32,7 @@ const CustomFormGroup: FunctionComponent<CustomFormGroupProps> = ({
       />
     </Col>
     <Col xs={12}>
-      <Form.Text className="text-muted">{text}</Form.Text>
+      <Form.Text className="text-muted d-none d-md-block">{text}</Form.Text>
     </Col>
   </Form.Group>
 );
@@ -81,8 +81,8 @@ const LoanForm: FunctionComponent<LoanFormProps> = ({
   onTerm,
   onInterest,
 }) => (
-  <Card className="mt-4">
-    <Card.Header>Loan Form</Card.Header>
+  <Card>
+    <Card.Header className="d-none d-md-block">Loan Form</Card.Header>
     <Card.Body>
       <Form>
         <AmountField onChange={onAmount} />
