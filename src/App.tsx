@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Col, Row } from "react-bootstrap";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { fas } from "@fortawesome/free-solid-svg-icons";
 import Header from "./components/Header";
 import LoanChart from "./components/LoanChart";
 import LoanForm from "./components/LoanForm";
 import LoanResult from "./components/LoanResult";
 import { computeLoanParameters } from "./utils/index";
+
+library.add(fas, fab);
 
 const App = (): JSX.Element => {
   const [amount, setAmount] = useState(0);
