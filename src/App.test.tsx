@@ -1,9 +1,17 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+/*
+ * Mocks the Pie chart so it doesn't fail while testing:
+ * https://github.com/reactchartjs/react-chartjs-2/issues/155
+ */
+jest.mock("react-chartjs-2", () => ({
+  Doughnut: () => null,
+}));
+
+test("renders home link", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const elements = screen.getAllByText("Loan Calculator");
+  expect(elements.length).toBeGreaterThanOrEqual(1);
 });
