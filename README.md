@@ -1,7 +1,10 @@
 # Loan Calculator
 
-- https://andre.miras.gitlab.io/loan-calculator/ (broken SSL)
-- http://andre.miras.gitlab.io/loan-calculator/ (no SSL)
+[![Tests](https://github.com/AndreMiras/loan-calculator/workflows/Tests/badge.svg?branch=develop)](https://github.com/AndreMiras/loan-calculator/actions?query=workflow%3ATests)
+[![Deploy](https://github.com/AndreMiras/loan-calculator/workflows/Deploy/badge.svg?branch=develop)](https://github.com/AndreMiras/loan-calculator/actions?query=workflow%3ADeploy)
+
+Simple way to determine monthly payment of a loan:
+<https://andremiras.github.io/loan-calculator/>
 
 
 ## Run

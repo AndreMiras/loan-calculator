@@ -1,6 +1,6 @@
 {
   "name": "loan-calculator",
-  "homepage": "https://andre.miras.gitlab.io/loan-calculator/",
+  "homepage": "https://andremiras.github.io/loan-calculator/",
   "version": "2021.06.06",
   "private": true,
   "dependencies": {
@@ -27,7 +27,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx && prettier --check src",
-    "format": "prettier --write src"
+    "format": "prettier --write src",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -50,6 +52,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
+    "gh-pages": "^3.2.0",
     "prettier": "^2.3.1"
   }
 }
