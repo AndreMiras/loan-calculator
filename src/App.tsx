@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Col, Row } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 import Header from "./components/Header";
 import LoanChart from "./components/LoanChart";
 import LoanForm from "./components/LoanForm";
@@ -19,7 +19,7 @@ const App = (): JSX.Element => {
   return (
     <div className="App">
       <Header />
-      <div className="container">
+      <Container>
         <Row>
           <Col sm={12} md={4}>
             <LoanForm
@@ -44,7 +44,7 @@ const App = (): JSX.Element => {
             />
           </Col>
         </Row>
-      </div>
+      </Container>
     </div>
   );
 };
