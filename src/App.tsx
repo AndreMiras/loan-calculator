@@ -33,7 +33,7 @@ const App = (): JSX.Element => {
               onInterest={setInterest}
             />
           </Col>
-          <Col sm={12} md={6} lg={8} className="mt-3">
+          <Col sm={12} md={6} lg={4} className="mt-3">
             <LoanResult
               monthlyPayment={monthlyPayment}
               amount={amount}
@@ -41,7 +41,7 @@ const App = (): JSX.Element => {
               total={total}
             />
           </Col>
-          <Col className="mt-3">
+          <Col lg={4} className="mt-3">
             <LoanChart
               amount={amount}
               totalInterest={totalInterest}
