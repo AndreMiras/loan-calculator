@@ -6,6 +6,10 @@
 Simple way to determine monthly payment of a loan:
 <https://andremiras.github.io/loan-calculator/>
 
+## Screenshot
+<img src="https://i.imgur.com/zE9bpuP.png" alt="Screenshot" width="800">
+
+
 
 ## Run
 ```sh
