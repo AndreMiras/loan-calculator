@@ -1,5 +1,6 @@
 import React, { FunctionComponent, ChangeEvent } from "react";
 import { Col, Card, Form } from "react-bootstrap";
+import LoanParamsProps from "./types";
 
 type onNumberChangeCallback = (value: number) => void;
 
@@ -12,14 +13,15 @@ type CustomFormGroupProps = {
   label: string;
   placeholder: string;
   text: string;
+  defaultValue: number;
   onChange: onNumberChangeCallback;
 };
-
 const CustomFormGroup: FunctionComponent<CustomFormGroupProps> = ({
   controlId,
   label,
   placeholder,
   text,
+  defaultValue,
   onChange,
 }) => (
   <Form.Group className="row" controlId={controlId}>
@@ -28,6 +30,7 @@ const CustomFormGroup: FunctionComponent<CustomFormGroupProps> = ({
       <Form.Control
         type="number"
         placeholder={placeholder}
+        defaultValue={defaultValue || ""}
         onChange={(e) => onChange(eventTargetValueNumber(e))}
       />
     </Col>
@@ -38,56 +41,72 @@ const CustomFormGroup: FunctionComponent<CustomFormGroupProps> = ({
 );
 
 type FieldProps = {
+  defaultValue: number;
   onChange: onNumberChangeCallback;
 };
 
-const AmountField: FunctionComponent<FieldProps> = ({ onChange }) => (
+const AmountField: FunctionComponent<FieldProps> = ({
+  defaultValue,
+  onChange,
+}) => (
   <CustomFormGroup
     controlId="loan-amount"
     label="Loan Amount"
     placeholder="200000"
     text="The amount to borrow"
+    defaultValue={defaultValue}
     onChange={onChange}
   />
 );
 
-const TermField: FunctionComponent<FieldProps> = ({ onChange }) => (
+const TermField: FunctionComponent<FieldProps> = ({
+  defaultValue,
+  onChange,
+}) => (
   <CustomFormGroup
     controlId="loan-term"
     label="Loan Term"
     placeholder="20"
     text="The loan repayment period in years."
+    defaultValue={defaultValue}
     onChange={onChange}
   />
 );
 
-const InterestRateField: FunctionComponent<FieldProps> = ({ onChange }) => (
+const InterestRateField: FunctionComponent<FieldProps> = ({
+  defaultValue,
+  onChange,
+}) => (
   <CustomFormGroup
     controlId="loan-interest-rate"
     label="Interest Rate"
     placeholder="1.9"
     text="The percentage interest rate."
+    defaultValue={defaultValue}
     onChange={onChange}
   />
 );
 
-type LoanFormProps = {
+type LoanFormProps = LoanParamsProps & {
   onAmount: onNumberChangeCallback;
   onTerm: onNumberChangeCallback;
   onInterest: onNumberChangeCallback;
 };
 const LoanForm: FunctionComponent<LoanFormProps> = ({
+  amount,
   onAmount,
+  term,
   onTerm,
+  interest,
   onInterest,
 }) => (
   <Card>
     <Card.Header className="d-none d-md-block">Loan Form</Card.Header>
     <Card.Body>
       <Form>
-        <AmountField onChange={onAmount} />
-        <TermField onChange={onTerm} />
-        <InterestRateField onChange={onInterest} />
+        <AmountField defaultValue={amount} onChange={onAmount} />
+        <TermField defaultValue={term} onChange={onTerm} />
+        <InterestRateField defaultValue={interest} onChange={onInterest} />
       </Form>
     </Card.Body>
   </Card>
