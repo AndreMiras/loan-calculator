@@ -1,7 +1,7 @@
 {
   "name": "loan-calculator",
   "homepage": "https://andremiras.github.io/loan-calculator/",
-  "version": "2021.06.06",
+  "version": "2021.06.13",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
