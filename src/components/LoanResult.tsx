@@ -14,8 +14,8 @@ const LoanResult: FunctionComponent<LoanResultProps> = ({
   totalInterest,
   total,
 }) => (
-  <Card className="mt-4">
-    <Card.Header>Loan Result</Card.Header>
+  <Card>
+    <Card.Header className="d-none d-md-block">Loan Result</Card.Header>
     <Card.Body>
       <Card.Title className="text-center">Monthly Payment</Card.Title>
       <h3 className="text-center">{monthlyPayment.toFixed(2)}</h3>

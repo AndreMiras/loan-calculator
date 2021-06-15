@@ -10,6 +10,10 @@ jest.mock("react-chartjs-2", () => ({
   Doughnut: () => null,
 }));
 
+jest.mock("react-router-dom", () => ({
+  useLocation: () => () => null,
+}));
+
 test("renders home link", () => {
   render(<App />);
   const elements = screen.getAllByText("Loan Calculator");
