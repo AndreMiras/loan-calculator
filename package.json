@@ -3,6 +3,9 @@
   "homepage": "https://andremiras.github.io/loan-calculator/",
   "version": "2021.06.13",
   "private": true,
+  "engines": {
+    "node": ">=16.0.0 <17.0.0"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
