@@ -4,20 +4,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useLocation } from "react-router-dom";
 import LoanParamsProps from "./types";
 
-const getParams = (
+const useLoanSearchParams = (
   amount: number,
   term: number,
   interest: number
-): URLSearchParams => {
-  const params = new URLSearchParams(useLocation().search);
+) => {
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
   params.set("amount", amount.toString());
   params.set("term", term.toString());
   params.set("interest", interest.toString());
-  return params;
+  return params.toString();
 };
-
-const getSearch = (amount: number, term: number, interest: number): string =>
-  "?" + getParams(amount, term, interest).toString();
 
 const ShareLink: FunctionComponent<LoanParamsProps> = ({
   amount,
@@ -27,7 +25,7 @@ const ShareLink: FunctionComponent<LoanParamsProps> = ({
   <Nav.Link
     as={Link}
     to={{
-      search: getSearch(amount, term, interest),
+      search: useLoanSearchParams(amount, term, interest),
     }}
   >
     <FontAwesomeIcon icon={["fas", "share-alt"]} /> Share Loan
