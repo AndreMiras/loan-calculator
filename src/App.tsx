@@ -15,9 +15,9 @@ library.add(fas, fab);
 
 const App = (): JSX.Element => {
   const params = new URLSearchParams(useLocation().search);
-  const [amount, setAmount] = useState(Number(params.get("amount") || 0));
-  const [term, setTerm] = useState(Number(params.get("term") || 0));
-  const [interest, setInterest] = useState(Number(params.get("interest") || 0));
+  const [amount, setAmount] = useState(Number(params.get("amount") ?? 0));
+  const [term, setTerm] = useState(Number(params.get("term") ?? 0));
+  const [interest, setInterest] = useState(Number(params.get("interest") ?? 0));
   const { monthlyPayment, totalInterest, total } = computeLoanParameters(
     amount,
     term,
